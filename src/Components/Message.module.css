@@ -1,0 +1,71 @@
+.message_wrapper {
+    width: 100%;
+    height: 500px;
+    padding-top: 100px;
+    background-image: url("https://itc.ua/wp-content/uploads/2017/11/iPhone-X.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.message_inner {
+    width: 240px;
+    min-height: 60px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+
+}
+
+.message_ava {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+}
+.message_cont{
+    width: 185px;
+    padding: 5px 5px 15px 5px;
+    min-height: 70px;
+    margin-left: 10px;
+    position: relative;
+    background-color: mediumturquoise;
+    border-radius: 5px 5px 5px 0;
+
+
+}
+.message_cont::after{
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: -19px;
+    background-color: mediumturquoise;
+    width: 20px;
+    height: 20px;
+    clip-path: polygon(85% 34%, 100% 0, 100% 23%, 100% 70%, 100% 100%, 50% 100%, 0 100%, 33% 86%, 53% 73%, 70% 56%);
+
+}
+.message_name {
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.message_text {
+    width: 190px;
+    margin-top:20px;
+    font-size: 14px;
+    white-space: normal;
+
+
+}
+
+.message_date {
+    position: absolute;
+    bottom: 0px;
+    right: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}

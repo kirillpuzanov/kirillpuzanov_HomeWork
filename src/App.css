@@ -1,0 +1,14 @@
+.App {
+
+  box-sizing: border-box;
+  height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.App> div{
+
+}
+
+
+
