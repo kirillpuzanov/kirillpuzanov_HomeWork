@@ -2,9 +2,9 @@ import React from "react";
 import st from './Message.module.css';
 
 type MessagePropsType = {
-    src: string,
-    name: string,
-    text: string | number | symbol
+    src: string
+    name: string
+    text: string
 
 }
 

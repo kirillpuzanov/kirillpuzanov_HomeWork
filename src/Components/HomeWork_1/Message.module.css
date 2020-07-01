@@ -37,7 +37,7 @@
 .message_cont::after{
     content: '';
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     left: -19px;
     background-color: mediumturquoise;
     width: 20px;
@@ -47,7 +47,7 @@
 }
 .message_name {
     position: absolute;
-    top: 0px;
+    top: 0;
     left: 10px;
     font-size: 16px;
     font-weight: bold;
@@ -64,7 +64,7 @@
 
 .message_date {
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     right: 5px;
     font-size: 14px;
     font-weight: bold;
