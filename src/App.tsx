@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import './App.css';
 import {Message} from "./Components/HomeWork_1/Message";
 import {MyAffair, lessonsType} from "./Components/HomeWork_2/MyAffairs";
+import {HomeWork_3} from "./Components/HomeWork_3/HomeWork_3";
+;
 
 export type FilterValueType = 'Всё' | 'Высокая' | 'Средняя' | 'Низкая';
 
@@ -48,6 +50,7 @@ function App() {
                 changeFilter={changeFilter}
                 deleteLesson={deleteLesson}
             />
+            <HomeWork_3 />
         </div>
     );
 }
