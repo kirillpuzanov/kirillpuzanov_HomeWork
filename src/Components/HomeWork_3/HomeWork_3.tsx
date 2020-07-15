@@ -1,6 +1,8 @@
-import React, {ChangeEvent, KeyboardEvent, useState} from "react";
+import React, {ChangeEvent, KeyboardEvent, MouseEvent, useState} from "react";
 import {v1} from "uuid";
-import s from'./HomeWork_3.module.css';
+import s from './HomeWork_3.module.css';
+import {MyInput} from "../../common/MyInput";
+import {MyBtn} from "../../common/MyBtn";
 
 
 type newUserType = { id: string, name: string }
@@ -11,35 +13,41 @@ export function HomeWork_3(props: helloUserPropsType) {
     const [text, setText] = useState<string>('')
     const [users, setUsers] = useState<Array<newUserType>>([])
     const onClickButton = () => {
-        if (text !== '' && text !== null) {
+        if (text !== '') {
             addNewUserToArr(text);
-            alert(`Привет ${text}!  Ты ${users.length+1} в списке`);
+            alert(`Привет ${text}!  Ты ${users.length + 1} в списке`);
             setText('')
         } else {
             alert('Введите своё имя.')
         }
     }
-    const addNewUserToArr = (newName:string) => {
-        let newUser:newUserType  = {id: v1(), name: newName};
-        setUsers([newUser, ...users ]);
+    const addNewUserToArr = (newName: string) => {
+        let newUser: newUserType = {id: v1(), name: newName};
+        setUsers([newUser, ...users]);
     }
-    const onChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
-        setText(e.currentTarget.value);
+    const onChangeInput = (value: string) => {
+        setText(value);
     }
-    const onKeyPressEnter = (e: KeyboardEvent<HTMLInputElement>) => {
-        if (e.key === 'Enter') {
-            onClickButton();
-        }
+    const onPressEnter = () => {
+        onClickButton();
     }
 
     return (
         <div className={s.work3}>
             <h3>HomeWork_3</h3>
-            <input value={text}
-                   onChange={onChangeInput}
-                   onKeyPress={onKeyPressEnter}
+            <MyInput value={text}
+                     onChange={onChangeInput}
+                     onKeyPress={onPressEnter}
+                     type={'text'}
+                     placeholder={'Поле ввода'}
+
             />
-            <button onClick={onClickButton}> Press</button>
+            <MyBtn onClick={onClickButton}
+                   name={'press'}
+                   disabled={false}
+                   type={'button'}
+            />
+            <div> {users.length} </div>
         </div>
     )
 }

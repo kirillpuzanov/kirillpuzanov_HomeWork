@@ -1,23 +1,25 @@
-.myAffairs{
+.myAffairs {
     padding: 50px 0 50px 0;
     width: 500px;
     margin: 0 auto;
 }
-.myAffairs h2{
+
+.myAffairs h2 {
     text-align: center;
 }
-.myAffairs ul{
+
+.myAffairs ul {
     text-align: center;
     list-style: none;
 }
-.list_btn{
+
+.list_btn {
     display: inline-block;
     margin-left: 20px;
 }
-.filter_btn_inner{
+
+.filter_btn_inner {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
-.filter_btn{
-    margin: 10px;
-}
+

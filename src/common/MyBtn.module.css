@@ -1,0 +1,32 @@
+.btn {
+    padding: 1px 3px 3px 3px;
+    margin: 2px 0;
+    border: solid 1px transparent;
+    border-radius: 4px;
+    min-width: 60px;
+    min-height: 25px;
+    font: inherit;
+    background: lightgreen;
+    cursor: pointer;
+    font-size: 14px;
+    outline: none;
+}
+
+.btn:hover {
+    color: #9555af;
+    border-color: lightgreen;
+    background-color: white;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+
+}
+
+.redBtn {
+    background: red;
+}
+
+.redBtn:hover {
+    color: #9555af;
+    border-color: red;
+    background-color: white;
+
+}
