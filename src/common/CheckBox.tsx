@@ -2,11 +2,9 @@ import React, {ChangeEvent} from 'react';
 import styles from "./CheckBox.module.css";
 
 export type myCheckBoxType = {
-    id?: number | string
     ChangeStatus: (checked: boolean) => void
     checked: boolean
-    type: string
-    className: string
+    type: 'checkbox'
 }
 
 export function MyCheckBox(props: myCheckBoxType) {

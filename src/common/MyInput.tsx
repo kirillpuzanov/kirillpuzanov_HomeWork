@@ -3,7 +3,7 @@ import styles from "./MyInput.module.css";
 
 
 export type myInputType = {
-    type: string
+    type: 'text'
     value?: string
     onChange: (value: string) => void
     error?: 'red'
