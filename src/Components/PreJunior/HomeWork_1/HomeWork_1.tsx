@@ -7,9 +7,9 @@ type MessagePropsType = {
     text: string
 
 }
-
-
-export function Message(props: MessagePropsType) {
+export function HomeWork_1(props: MessagePropsType) {
+    let hours = new Date().getHours()
+    let min = new Date().getMinutes()
     return (
         <div className={st.message_wrapper}>
             <div className={st.message_inner}>
@@ -17,7 +17,7 @@ export function Message(props: MessagePropsType) {
                 <div className={st.message_cont}>
                     <span className={st.message_name}>{props.name} </span>
                     <div className={st.message_text}>{props.text}</div>
-                    <span className={st.message_date}> {new Date().getHours() + '.' + new Date().getMinutes()}</span>
+                    <span className={st.message_date}> {min < 10 ? hours + '.' + 0 + min : hours + '.' + min}</span>
                 </div>
             </div>
         </div>

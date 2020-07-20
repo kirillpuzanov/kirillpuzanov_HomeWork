@@ -1,0 +1,11 @@
+.header {
+    grid-area: h;
+    background-color: lightgreen;
+}
+
+.header span {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 24px;
+}

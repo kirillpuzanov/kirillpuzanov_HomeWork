@@ -17,7 +17,6 @@ export function UniversalComp(props: UniversalCompType) {
                     checked={false}
                     ChangeStatus={() => {
                     }}
-                    className={'checkbox'}
                 />
             </div>
             <div>

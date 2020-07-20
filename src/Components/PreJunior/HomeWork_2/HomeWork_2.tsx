@@ -1,7 +1,8 @@
 import React from "react";
-import {FilterValueType} from "../../App";
+import {FilterValueType} from "../../../App";
 import styles from './HomeWork_2.module.css';
-import {MyBtn} from "../../common/MyBtn";
+import {MyBtn} from "../../../common/MyBtn";
+
 
 export type  lessonsType = {
     id: number

@@ -1,0 +1,91 @@
+.NavBar_wrapper {
+    display: flex;
+}
+
+.NavBar {
+    transform: translateX(-200%);
+}
+
+.NavBar_active {
+    transform: translateX(0);
+}
+
+.NavBar,
+.NavBar_active {
+    order: 1;
+    background-color: #b2b2b2;
+    grid-area: n;
+    padding: 20px;
+    height: 100vh;
+    min-width: 180px;
+    transition: all 0.5s;
+}
+
+.NavBar a,
+.NavBar_active a {
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+}
+
+.NavBar a.activeLink,
+.NavBar_active a.activeLink {
+    color: blue;
+    margin-left: 20px;
+    transition: all 0.5s;
+}
+
+.Btn_burger,
+.Btn_burger_active {
+    order: 2;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.Btn_burger span,
+.Btn_burger span::before,
+.Btn_burger span::after,
+.Btn_burger_active span,
+.Btn_burger_active span::before,
+.Btn_burger_active span::after {
+    position: absolute;
+    top: 50%;
+    margin-top: -1px;
+    left: 50%;
+    margin-left: -15px;
+    width: 30px;
+    height: 2px;
+    background-color: black;
+}
+
+.Btn_burger span::before,
+.Btn_burger span::after,
+.Btn_burger_active span::before,
+.Btn_burger_active span::after {
+    content: '';
+    display: block;
+    transition: all 0.5s;
+}
+
+.Btn_burger span::before {
+    transform: translateY(-5px);
+}
+
+.Btn_burger span::after {
+    transform: translateY(5px);
+}
+
+.Btn_burger_active span {
+    height: 0;
+}
+
+.Btn_burger_active span::before {
+    transform: rotate(45deg);
+}
+
+.Btn_burger_active span::after {
+    transform: rotate(-45deg);
+}

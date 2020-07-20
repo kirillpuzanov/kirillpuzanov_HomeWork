@@ -1,13 +1,21 @@
-.App {
-
-  box-sizing: border-box;
-  height: 100vh;
-  max-width: 1200px;
-  margin: 0 auto;
-  overflow: hidden;
+* {
+    box-sizing: border-box;
 }
-.App> div{
 
+.App_wrapper {
+    margin: 0 auto;
+    max-width: 1200px;
+    display: grid;
+    grid-template-areas:
+    'h h h'
+    'n p p';
+    grid-template-rows:60px 1fr;
+    grid-template-columns: 2fr 10fr;
+    grid-gap: 10px;
+}
+
+.App_wrapper__content {
+    grid-area: p;
 }
 
 
