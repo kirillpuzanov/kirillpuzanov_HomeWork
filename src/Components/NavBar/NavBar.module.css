@@ -43,6 +43,7 @@
     height: 50px;
     border-radius: 50%;
     position: relative;
+    cursor: pointer;
 }
 
 .Btn_burger span,
