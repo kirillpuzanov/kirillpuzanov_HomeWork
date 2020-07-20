@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/kirillpuzanov_HomeWork/static/css/main.27d9e6bb.chunk.css",
+    "main.css": "/kirillpuzanov_HomeWork/static/css/main.17d75b08.chunk.css",
     "main.js": "/kirillpuzanov_HomeWork/static/js/main.be5ed2e6.chunk.js",
     "main.js.map": "/kirillpuzanov_HomeWork/static/js/main.be5ed2e6.chunk.js.map",
     "runtime-main.js": "/kirillpuzanov_HomeWork/static/js/runtime-main.2fb146c3.js",
@@ -8,15 +8,15 @@
     "static/js/2.62b8f95b.chunk.js": "/kirillpuzanov_HomeWork/static/js/2.62b8f95b.chunk.js",
     "static/js/2.62b8f95b.chunk.js.map": "/kirillpuzanov_HomeWork/static/js/2.62b8f95b.chunk.js.map",
     "index.html": "/kirillpuzanov_HomeWork/index.html",
-    "precache-manifest.d47630420c6ba76d940ffd8e80264231.js": "/kirillpuzanov_HomeWork/precache-manifest.d47630420c6ba76d940ffd8e80264231.js",
+    "precache-manifest.127b0733bd8eb7e1cf0c06511803dc35.js": "/kirillpuzanov_HomeWork/precache-manifest.127b0733bd8eb7e1cf0c06511803dc35.js",
     "service-worker.js": "/kirillpuzanov_HomeWork/service-worker.js",
-    "static/css/main.27d9e6bb.chunk.css.map": "/kirillpuzanov_HomeWork/static/css/main.27d9e6bb.chunk.css.map",
+    "static/css/main.17d75b08.chunk.css.map": "/kirillpuzanov_HomeWork/static/css/main.17d75b08.chunk.css.map",
     "static/js/2.62b8f95b.chunk.js.LICENSE.txt": "/kirillpuzanov_HomeWork/static/js/2.62b8f95b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.2fb146c3.js",
     "static/js/2.62b8f95b.chunk.js",
-    "static/css/main.27d9e6bb.chunk.css",
+    "static/css/main.17d75b08.chunk.css",
     "static/js/main.be5ed2e6.chunk.js"
   ]
 }
