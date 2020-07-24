@@ -4,17 +4,17 @@ import styles from "./MyInput.module.css";
 
 export type myInputType = {
     type: 'text'
-    value?: string
+    value: string
     onChange: (value: string) => void
     error?: 'red'
-    onKeyPress: () => void
+    onKeyPress?: () => void
     placeholder?: string
 }
 
 export function MyInput(props: myInputType) {
 
     const onPressEnter = (e: KeyboardEvent<HTMLInputElement>) => {
-        if (e.charCode === 13) {
+        if ( props.onKeyPress && e.charCode === 13) {
             props.onKeyPress()
         }
     }

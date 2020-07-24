@@ -9,6 +9,7 @@ export type myBtnType = {
     onClick: () => void
     className?: string
 
+
 }
 
 export function MyBtn(props: myBtnType) {

@@ -5,7 +5,7 @@ export function Header() {
 
     return (
         <div className={style.header}>
-            <span> Home Work 5</span>
+            <span> Home Work</span>
         </div>
     )
 }
