@@ -1,4 +1,4 @@
-import React, {ChangeEvent, KeyboardEvent, MouseEvent, useState} from "react";
+import React, { useState} from "react";
 import {v1} from "uuid";
 import s from './HomeWork_3.module.css';
 import {MyInput} from "../../../common/MyInput";

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {NavLink} from "react-router-dom";
-import style from './NavBar.module.css';
+import style from './NavBar.module.scss';
 
 
 export function NavBar() {
@@ -10,11 +10,11 @@ export function NavBar() {
     }
     return (
         <div className={style.NavBar_wrapper}>
-            <div className={active ? style.Btn_burger_active : style.Btn_burger}
+            <div className={active ? `${style.Btn_burger} ${style.Btn_burger_active}` : style.Btn_burger}
                  onClick={pressBtn}>
                 <span></span>
             </div>
-            <nav className={active ? style.NavBar_active : style.NavBar}>
+            <nav className={active ? `${style.NavBar} ${style.NavBar_active}` : style.NavBar}>
                 <div>
                     <NavLink to='/PreJunior' activeClassName={style.activeLink}>
                         PreJunior

@@ -1,0 +1,11 @@
+.editable {
+  margin: 50px auto;
+  text-align: center;
+
+  &_span {
+    cursor: pointer;
+    &:hover{
+      color:lightgreen
+    }
+  }
+}
