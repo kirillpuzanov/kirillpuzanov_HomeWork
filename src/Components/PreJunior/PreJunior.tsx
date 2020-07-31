@@ -3,6 +3,7 @@ import {FilterValueType} from "../../App";
 import {HomeWork_2, lessonsType} from "./HomeWork_2/HomeWork_2";
 import {HomeWork_3} from "./HomeWork_3/HomeWork_3";
 import {HomeWork_1} from "./HomeWork_1/HomeWork_1";
+import {EditableSpan2} from "../../common/EditableSpan2";
 
 
 export function PreJunior() {
@@ -50,6 +51,7 @@ export function PreJunior() {
                     deleteLesson={deleteLesson}
                 />
                 <HomeWork_3/>
+                <EditableSpan2 text = 'нажмите для ввода'/>
                 {/*<UniversalComp/>*/}
             </div>
         </div>

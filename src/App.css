@@ -3,13 +3,13 @@
 }
 
 .App_wrapper {
-    margin: 0 auto;
-    max-width: 1200px;
     display: grid;
-    grid-template-areas:
-    'h h h'
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+    grid-template-areas: 'h h h'
     'n p p';
-    grid-template-rows:60px 1fr;
+    grid-template-rows: 60px 1fr;
     grid-template-columns: 2fr 10fr;
     grid-gap: 10px;
 }

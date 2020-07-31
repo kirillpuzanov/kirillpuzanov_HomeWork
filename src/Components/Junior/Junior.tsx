@@ -1,13 +1,25 @@
 import React, {useState} from 'react';
 import {EditableSpan} from "../../common/EditableSpan";
+import {v1} from "uuid";
+import {MySelect} from "../../common/MySelect";
+import {MyRadio} from "../../common/MyRadio";
+import style from './Junior.module.css';
+
+
+//тип для обьектов, внутри масива selectData
+export type generalObjType = {
+    id: string
+    value: string
+}
+
 
 export function Junior() {
-
+////////////////////////////////////////////////////////////////
     let [value, setValue] = useState('')
     let [editMode, setEditMode] = useState(false)
 
 // Функция показа/скрытия инпута
-    const visibilityInput = () => setEditMode(!editMode);
+    const visibilityInput = () => setEditMode(true);
     // Сохранение введенного текста  инпута в стэйт (в переменную value)
     const onChangeInput = (value: string) => setValue(value);
 
@@ -25,11 +37,12 @@ export function Junior() {
     const RestoreDAta = () => {
         restoreState("test", {x: 'Ранее введенные значения отсутствуют....'})
     }
+
     type StateType = {
         x: string
     }
 
-// Функция сохранения value из  input  в lS
+// Функция сохранения value из  inputs  в lS
     function saveState(key: string, state: StateType) {
         const stateAsString = JSON.stringify(state);
         localStorage.setItem(key, stateAsString)
@@ -50,6 +63,36 @@ export function Junior() {
 // Функция для инпута
     const pressEnter = () => saveData();
 
+
+    ///            MySelect + Radio ////////////
+
+    // универсальный массив для MySelect + Radio
+    const generalData: generalObjType[] = [
+        {id: v1(), value: 'Выберите интересующий пункт: '},
+        {id: v1(), value: 'Персональные компъютеры'},
+        {id: v1(), value: 'Ноутбуки'},
+        {id: v1(), value: 'Смартфоны'},
+        {id: v1(), value: 'Комплектующие для ПК '},
+        {id: v1(), value: 'Комплектующие для ноутбуков'},
+        {id: v1(), value: 'Аксессуары'}
+    ]
+
+    const [activeSelect, setActiveSelect] = useState('')
+    const [activeRadio, setActiveRadio] = useState('')
+
+
+    const ChangeSelect = (value: string) => {
+        generalData.find(t => {
+            if (t.value === value) setActiveSelect(t.value)
+        })
+    }
+
+    const ChangeRadio = (value: string) => {
+        generalData.find(t => {
+            if (t.value === value) setActiveRadio(t.value)
+        })
+    }
+/////////////////////////////////////////////////////////
     return (
         <div>
             <EditableSpan
@@ -62,6 +105,19 @@ export function Junior() {
                 saveData={saveData}
                 RestoreDAta={RestoreDAta}
             />
+            <div className={style.junior_inner}>
+                <MySelect
+                value={activeSelect}
+                onChange={ChangeSelect}
+                generalData={generalData}
+            />
+                <MyRadio
+                    generalData={generalData}
+                    name='products'
+                    onChange={ChangeRadio}
+                    value={activeRadio}
+                />
+            </div>
         </div>
     )
 }

@@ -13,11 +13,16 @@ export type EditableSpanType = {
     pressEnter?: () => void
     saveData: () => void
     RestoreDAta: () => void
+
 }
 
 export function EditableSpan(props: EditableSpanType) {
 
-    const {value,text, onChange, editMode, visibilityInput, pressEnter, saveData, RestoreDAta} = props
+    const {value, text, onChange, editMode, visibilityInput, pressEnter, saveData, RestoreDAta} = props;
+
+
+
+
 
     return (
         <div className={styles.editable}>
@@ -25,6 +30,7 @@ export function EditableSpan(props: EditableSpanType) {
             {editMode &&
             <span>
                 <MyInput
+                    autoFocus
                     type={"text"}
                     value={value}
                     onChange={onChange}
