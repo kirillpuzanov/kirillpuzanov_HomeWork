@@ -17,7 +17,7 @@ export function MyRadio(props: MyRadioType) {
             <b>Выберете интересующий вас пункт: </b>
             {
                 props.generalData.slice(1).map(t => {
-                        return <p><input type='radio' key={t.id} name={props.name} value={t.value}/> {t.value}</p>
+                        return <p key={t.id}><input type='radio'  name={props.name} value={t.value}/> {t.value}</p>
                 })
             }
         </div>

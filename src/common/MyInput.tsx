@@ -24,7 +24,6 @@ export function MyInput(props: myInputType) {
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => props.onChange(e.currentTarget.value);
 
 
-
     return (
         <div>
             <input
@@ -35,7 +34,6 @@ export function MyInput(props: myInputType) {
                 onKeyPress={onPressEnter}
                 className={props.error ? `${styles.inputBase}${styles.red}` : styles.inputBase}
                 placeholder={props.placeholder}
-                autoFocus
             />
         </div>
     )

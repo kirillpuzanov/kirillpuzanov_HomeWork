@@ -4,6 +4,7 @@ import {v1} from "uuid";
 import {MySelect} from "../../common/MySelect";
 import {MyRadio} from "../../common/MyRadio";
 import style from './Junior.module.css';
+import UsersContainer from "./HW8_ArrayUsers/UsersContainer";
 
 
 //тип для обьектов, внутри масива selectData
@@ -104,6 +105,7 @@ export function Junior() {
                 pressEnter={pressEnter}
                 saveData={saveData}
                 RestoreDAta={RestoreDAta}
+
             />
             <div className={style.junior_inner}>
                 <MySelect
@@ -118,6 +120,7 @@ export function Junior() {
                     value={activeRadio}
                 />
             </div>
+            <UsersContainer/>
         </div>
     )
 }

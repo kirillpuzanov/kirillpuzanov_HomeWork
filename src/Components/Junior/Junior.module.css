@@ -1,4 +1,10 @@
-.junior_inner{
+.junior_inner {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.junior_inner button{
+    margin: 10px auto;
+    display: block;
 }

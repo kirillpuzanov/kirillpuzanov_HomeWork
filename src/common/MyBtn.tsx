@@ -1,8 +1,8 @@
-import React, {MouseEvent} from 'react';
+import React from 'react';
 import styles from "./MyBtn.module.css";
 
 export type myBtnType = {
-    name: string
+    name?: string
     type?: string
     red?: boolean
     disabled?: boolean

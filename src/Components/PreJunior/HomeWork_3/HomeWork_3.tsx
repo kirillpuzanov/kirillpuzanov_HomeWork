@@ -42,6 +42,7 @@ export function HomeWork_3(props: helloUserPropsType) {
                      type={'text'}
                      placeholder={'Поле ввода'}
 
+
             />
             <MyBtn onClick={onClickButton}
                    name={'press'}
