@@ -5,6 +5,7 @@ import {MySelect} from "../../common/MySelect";
 import {MyRadio} from "../../common/MyRadio";
 import style from './Junior.module.css';
 import UsersContainer from "./HW8_ArrayUsers/UsersContainer";
+import {DateComponent} from "./HW9_DATE/Date";
 
 
 //тип для обьектов, внутри масива selectData
@@ -93,6 +94,28 @@ export function Junior() {
             if (t.value === value) setActiveRadio(t.value)
         })
     }
+
+    //////////////////////HW-9   date///////////////
+
+
+    const [timerId, setTimerId] = useState<number>(0);
+    const [date, setDate] = useState<Date>(new Date());
+    const [showDate, setShowDate] = useState<boolean>(false)
+
+    const stopTime = () => clearInterval(timerId)
+    const runTime = () => {
+        window.clearInterval(timerId)
+        const timer_id: number = window.setInterval(() => setDate(new Date()), 1000);
+        setTimerId(timer_id);
+    }
+    const mouseOver = () => {
+        setShowDate(true);
+    }
+    const mouseOut = () => {
+        setShowDate(false);
+    }
+
+
 /////////////////////////////////////////////////////////
     return (
         <div>
@@ -105,14 +128,13 @@ export function Junior() {
                 pressEnter={pressEnter}
                 saveData={saveData}
                 RestoreDAta={RestoreDAta}
-
             />
             <div className={style.junior_inner}>
                 <MySelect
-                value={activeSelect}
-                onChange={ChangeSelect}
-                generalData={generalData}
-            />
+                    value={activeSelect}
+                    onChange={ChangeSelect}
+                    generalData={generalData}
+                />
                 <MyRadio
                     generalData={generalData}
                     name='products'
@@ -121,6 +143,15 @@ export function Junior() {
                 />
             </div>
             <UsersContainer/>
+
+            <DateComponent   //HW_9
+                date={date}
+                runTime={runTime}
+                stopTime={stopTime}
+                showDate={showDate}
+                mouseOver={mouseOver}
+                mouseOut={mouseOut}
+            />
         </div>
     )
 }
