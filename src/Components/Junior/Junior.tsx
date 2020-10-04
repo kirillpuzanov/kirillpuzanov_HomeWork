@@ -6,6 +6,11 @@ import {MyRadio} from "../../common/MyRadio";
 import style from './Junior.module.css';
 import UsersContainer from "./HW8_ArrayUsers/UsersContainer";
 import {DateComponent} from "./HW9_DATE/Date";
+import {MyPreloader} from "../../common/MyPreloader";
+import {useDispatch, useSelector} from "react-redux";
+import {AppStateType} from "../../state/redax-store";
+import {preloaderAC, preloadStateType} from "../../state/HW10Reducer";
+import {MyBtn} from "../../common/MyBtn";
 
 
 //тип для обьектов, внутри масива selectData
@@ -115,10 +120,26 @@ export function Junior() {
         setShowDate(false);
     }
 
+///////////////HW10/////////////////////////////////////
+    const dispatch = useDispatch();
+    const loading = useSelector<AppStateType>(state => state.HW10.loading)
+    const onChangeLoadingValue = () => {
+        dispatch(preloaderAC(true))
+        setTimeout(()=>{
+            dispatch(preloaderAC(false))
+        },3000)
+    }
+
 
 /////////////////////////////////////////////////////////
+    if (loading){
+        return <div className={style.preloader}><MyPreloader/></div>
+    }
     return (
         <div>
+            <MyBtn onClick={onChangeLoadingValue}
+                   name={'Start Loading'}
+            />
             <EditableSpan
                 value={value}
                 text='Press for open input...'

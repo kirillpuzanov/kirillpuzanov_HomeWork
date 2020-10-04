@@ -17,6 +17,10 @@
 .App_wrapper__content {
     grid-area: p;
 }
+.preloader{
+    margin: 0 auto;
+    margin-top: 200px;
+}
 
 
 
