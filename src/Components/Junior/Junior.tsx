@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {ChangeEvent, useState} from 'react';
 import {EditableSpan} from "../../common/EditableSpan";
 import {v1} from "uuid";
 import {MySelect} from "../../common/MySelect";
@@ -11,6 +11,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {AppStateType} from "../../state/redax-store";
 import {preloaderAC, preloadStateType} from "../../state/HW10Reducer";
 import {MyBtn} from "../../common/MyBtn";
+import {MyRange} from "../../common/MeRange";
 
 
 //тип для обьектов, внутри масива selectData
@@ -125,14 +126,21 @@ export function Junior() {
     const loading = useSelector<AppStateType>(state => state.HW10.loading)
     const onChangeLoadingValue = () => {
         dispatch(preloaderAC(true))
-        setTimeout(()=>{
+        setTimeout(() => {
             dispatch(preloaderAC(false))
-        },3000)
+        }, 3000)
     }
 
 
+/////////////////HW11////////////////////////
+    const [valueRange, setRange] = useState<number>(50)
+    const onChange123 = (value: number) => {
+
+        return setRange(value)
+    }
+
 /////////////////////////////////////////////////////////
-    if (loading){
+    if (loading) {
         return <div className={style.preloader}><MyPreloader/></div>
     }
     return (
@@ -172,6 +180,13 @@ export function Junior() {
                 showDate={showDate}
                 mouseOver={mouseOver}
                 mouseOut={mouseOut}
+            />
+            <MyRange
+                onChange={onChange123}
+                min={0}
+                max={100}
+                step={5}
+                value={valueRange}
             />
         </div>
     )
