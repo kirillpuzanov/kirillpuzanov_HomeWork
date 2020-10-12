@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useState} from 'react';
+import React, {useState} from 'react';
 import {EditableSpan} from "../../common/EditableSpan";
 import {v1} from "uuid";
 import {MySelect} from "../../common/MySelect";
@@ -9,11 +9,12 @@ import {DateComponent} from "./HW9_DATE/Date";
 import {MyPreloader} from "../../common/MyPreloader";
 import {useDispatch, useSelector} from "react-redux";
 import {AppStateType} from "../../state/redax-store";
-import {preloaderAC, preloadStateType} from "../../state/HW10Reducer";
+import {preloaderAC} from "../../state/HW10Reducer";
 import {MyBtn} from "../../common/MyBtn";
 import {MyRange} from "../../common/MyRange";
 import {MyMultiRange} from "../../common/MyMultiRange/MyMultiRange";
-import {Slider} from "react-compound-slider";
+import {ChangeRootStyle} from "../../common/ChangeRootStyle";
+import {changeStyleAC, dataThemeType} from "../../state/HW12";
 
 
 //тип для обьектов, внутри масива selectData
@@ -72,7 +73,6 @@ export function Junior() {
 
 // Функция для инпута
     const pressEnter = () => saveData();
-
 
     ///            MySelect + Radio ////////////
 
@@ -141,12 +141,22 @@ export function Junior() {
     let [valueMultiRAnge, setMultiRange] = useState([30, 70])
     const onChangeMultiRange = (value: number[]) => setMultiRange(value)
 
-/////////////////////////////////////////////////////////
+/////////////////////////HW12//////////////////////////////
+
+    const dataStyle = useSelector<AppStateType, dataThemeType[]>(state => state.HW12.dataTheme);
+    const currentStyle = style[useSelector<AppStateType, string>(state => state.HW12.currentTheme)];
+
+    const onStyleChange = (title: string, checked: boolean) => {
+        dispatch(changeStyleAC(title, checked))
+    }
+
+    //////////////////////////////////////////////////
+
     if (loading) {
         return <div className={style.preloader}><MyPreloader/></div>
     }
     return (
-        <div className={style.junior}>
+        <div className={`${style.junior} ${currentStyle}`}>
             <MyBtn onClick={onChangeLoadingValue}
                    name={'Start Loading'}
             />
@@ -167,7 +177,7 @@ export function Junior() {
                     generalData={generalData}
                 />
                 <MyRadio
-                    generalData={generalData}
+                    arrData={generalData}
                     name='products'
                     onChange={ChangeRadio}
                     value={activeRadio}
@@ -198,7 +208,10 @@ export function Junior() {
                 values={valueMultiRAnge}
                 onChange={onChangeMultiRange}
             />
-
+            <ChangeRootStyle
+                onChange={onStyleChange}
+                data={dataStyle}
+            />
         </div>
     )
 }

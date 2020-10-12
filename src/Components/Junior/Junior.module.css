@@ -1,6 +1,19 @@
 .junior{
     padding-bottom: 100px;
 }
+.start {
+
+}
+
+.night {
+    background-color: #282828;
+    color: #fa7777
+}
+
+.light {
+    background-color: #e2e2e2;
+    color: #fa6363;
+}
 
 .junior_inner {
     display: flex;
@@ -8,11 +21,12 @@
     flex-wrap: wrap;
 }
 
-.junior_inner button{
+.junior_inner button {
     margin: 10px auto;
     display: block;
 }
-.preloader{
+
+.preloader {
     width: 150px;
     margin: 200px auto;
 
