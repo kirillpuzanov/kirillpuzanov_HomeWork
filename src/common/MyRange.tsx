@@ -1,4 +1,5 @@
-import React, {ChangeEvent, useCallback, useState} from "react";
+import React, {ChangeEvent, useCallback} from "react";
+import s from './MyRange.module.scss';
 
 type RangeType = {
     onChange: (value: number) => void
@@ -13,10 +14,11 @@ export const MyRange = React.memo((props: RangeType) => {
     const {min, max, step, value} = props;
     const onChangeRange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
         return props.onChange(Number(e.target.value))
-    },[])
+    }, [])
 
     return <>
-        <form>
+        <div className={s.title}>HW-11</div>
+        <form className={s.myRange}>
             <input
                 type="range"
                 min={min}
@@ -25,12 +27,7 @@ export const MyRange = React.memo((props: RangeType) => {
                 value={value}
                 onChange={onChangeRange}
             />
-            <input
-                type="number"
-                value={value}
-                step={step}
-                onChange={onChangeRange}
-            />
+            <div>{value}</div>
         </form>
     </>
 })

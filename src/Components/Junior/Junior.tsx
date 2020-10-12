@@ -11,7 +11,9 @@ import {useDispatch, useSelector} from "react-redux";
 import {AppStateType} from "../../state/redax-store";
 import {preloaderAC, preloadStateType} from "../../state/HW10Reducer";
 import {MyBtn} from "../../common/MyBtn";
-import {MyRange} from "../../common/MeRange";
+import {MyRange} from "../../common/MyRange";
+import {MyMultiRange} from "../../common/MyMultiRange/MyMultiRange";
+import {Slider} from "react-compound-slider";
 
 
 //тип для обьектов, внутри масива selectData
@@ -134,17 +136,17 @@ export function Junior() {
 
 /////////////////HW11////////////////////////
     const [valueRange, setRange] = useState<number>(50)
-    const onChange123 = (value: number) => {
+    const onChangeRAnge = (value: number) => setRange(value)
 
-        return setRange(value)
-    }
+    let [valueMultiRAnge, setMultiRange] = useState([30, 70])
+    const onChangeMultiRange = (value: number[]) => setMultiRange(value)
 
 /////////////////////////////////////////////////////////
     if (loading) {
         return <div className={style.preloader}><MyPreloader/></div>
     }
     return (
-        <div>
+        <div className={style.junior}>
             <MyBtn onClick={onChangeLoadingValue}
                    name={'Start Loading'}
             />
@@ -181,13 +183,22 @@ export function Junior() {
                 mouseOver={mouseOver}
                 mouseOut={mouseOut}
             />
-            <MyRange
-                onChange={onChange123}
+            <MyRange    // HW11
+                onChange={onChangeRAnge}
                 min={0}
                 max={100}
                 step={5}
                 value={valueRange}
             />
+
+            <MyMultiRange  // HW11
+                domain={[0, 100]}
+                step={5}
+                mode={2}
+                values={valueMultiRAnge}
+                onChange={onChangeMultiRange}
+            />
+
         </div>
     )
 }
