@@ -12,7 +12,6 @@ export type FilterValueType = 'Все' | 'Высокая' | 'Средняя' | '
 
 function App() {
 
-
     return (
         <HashRouter>
             <div className={'App_wrapper'}>

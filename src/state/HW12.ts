@@ -28,14 +28,13 @@ export const ChangeStyleReducer = (state: HW12StateType = initialState, action: 
         case "CHANGE-THEME-STYLE": {
             return {
                 ...state,
-                dataTheme: [...state.dataTheme.map(el => el.title === action.title
+                dataTheme: state.dataTheme.map(el => el.title === action.title
                     ? {...el, checked: action.checked}
-                    : {...el, checked: false})],
+                    : {...el, checked: false}),
                 currentTheme: action.title
             }
         }
         default:
             return state;
     }
-
 }

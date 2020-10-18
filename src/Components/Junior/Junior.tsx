@@ -13,7 +13,7 @@ import {preloaderAC} from "../../state/HW10Reducer";
 import {MyBtn} from "../../common/MyBtn";
 import {MyRange} from "../../common/MyRange";
 import {MyMultiRange} from "../../common/MyMultiRange/MyMultiRange";
-import {ChangeRootStyle} from "../../common/ChangeRootStyle";
+import {ChangeRootStyle} from "./ChangeRootStyle";
 import {changeStyleAC, dataThemeType} from "../../state/HW12";
 
 
@@ -212,6 +212,7 @@ export function Junior() {
                 onChange={onStyleChange}
                 data={dataStyle}
             />
+
         </div>
     )
 }

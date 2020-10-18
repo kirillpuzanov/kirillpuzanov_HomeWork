@@ -1,6 +1,6 @@
 import React, {ChangeEvent} from "react";
-import {dataThemeType} from "../state/HW12";
-import s from "./MyRange.module.scss";
+import {dataThemeType} from "../../state/HW12";
+import s from "../../common/MyRange.module.scss";
 
 type ChangeRootStyleType = {
     data: dataThemeType[]
@@ -24,8 +24,6 @@ export const ChangeRootStyle: React.FC<ChangeRootStyleType> = React.memo((props)
                 onChange={onChangeHandler}
             />{el.title}</label> )
         }
-
-
     </div>
 })
 
